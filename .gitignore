@@ -2,5 +2,18 @@ bin/
 obj/
 /packages/
 riderModule.iml
+
+# User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.sln.DotSettings
+*.csproj.DotSettings
+
+
+# Visual Studio 2015/2017/2019/2022 and Rider cache/options directory
+.vs/
 /_ReSharper.Caches/
 .idea/
