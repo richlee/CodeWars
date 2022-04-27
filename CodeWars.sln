@@ -6,6 +6,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StopSpinning", "StopSpinnin
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Squares", "Squares\Squares.csproj", "{6594F8FA-EC65-489E-B4FF-53EB6DD4979E}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BreakCamelCase", "BreakCamelCase\BreakCamelCase.csproj", "{CF7409FA-97F8-4758-9D38-4BA147AA477F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ArrayDiff", "ArrayDiff\ArrayDiff.csproj", "{66FF9F6F-F1BF-4D5C-B659-9583333D2310}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +28,13 @@ Global
 		{6594F8FA-EC65-489E-B4FF-53EB6DD4979E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6594F8FA-EC65-489E-B4FF-53EB6DD4979E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6594F8FA-EC65-489E-B4FF-53EB6DD4979E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CF7409FA-97F8-4758-9D38-4BA147AA477F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CF7409FA-97F8-4758-9D38-4BA147AA477F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CF7409FA-97F8-4758-9D38-4BA147AA477F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CF7409FA-97F8-4758-9D38-4BA147AA477F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66FF9F6F-F1BF-4D5C-B659-9583333D2310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66FF9F6F-F1BF-4D5C-B659-9583333D2310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66FF9F6F-F1BF-4D5C-B659-9583333D2310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66FF9F6F-F1BF-4D5C-B659-9583333D2310}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
