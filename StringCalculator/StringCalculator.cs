@@ -2,7 +2,7 @@
 
 public class StringCalculator
 {
-    public event Action<string, int> AddOccurred = delegate {  };
+    public event Action<string, int> AddOccurred = delegate { };
 
     private int _calledCount;
     private const string DefaultDelimiter = ",";
@@ -10,7 +10,7 @@ public class StringCalculator
     public int Add(string numbers)
     {
         if (numbers == null) throw new ArgumentNullException(nameof(numbers));
-        
+
         var lines = ToLines(numbers).ToList();
         var delimiters = ExtractDelimiters(ref lines);
         var splitNumbers = ExtractNumbers(lines, delimiters);
@@ -21,7 +21,7 @@ public class StringCalculator
 
         _calledCount++;
         AddOccurred(numbers, sum);
-        
+
         return sum;
     }
 
@@ -43,7 +43,7 @@ public class StringCalculator
     {
         if (lines == null) throw new ArgumentNullException(nameof(lines));
         if (delimiters == null) throw new ArgumentNullException(nameof(delimiters));
-        
+
         var splits = new List<string>();
 
         foreach (var line in lines)
@@ -57,30 +57,22 @@ public class StringCalculator
         return splits;
     }
 
-    private static string ToConsistentDelimiter(string line, IEnumerable<string> delimiters)
-    {
-        var consistentLine = line;
-        foreach (var delimiter in delimiters)
-        {
-            consistentLine = consistentLine.Replace(delimiter, DefaultDelimiter);
-        }
+    private static string ToConsistentDelimiter(string line, IEnumerable<string> delimiters) =>
+        delimiters
+            .Aggregate(line, (current, delimiter) =>
+                current.Replace(delimiter, DefaultDelimiter));
 
-        return consistentLine;
-    }
+    private static List<string> ToLines(string numbers) =>
+        numbers
+            .Split('\n', StringSplitOptions.RemoveEmptyEntries)
+            .ToList();
 
-    private static List<string> ToLines(string numbers) => numbers
-        .Split('\n', StringSplitOptions.RemoveEmptyEntries)
-        .ToList();
-
-    public int GetCalledCount()
-    {
-        return _calledCount;
-    }
+    public int GetCalledCount() => _calledCount;
 
     private static List<string> ExtractDelimiters(ref List<string> lines)
     {
         if (lines == null) throw new ArgumentNullException(nameof(lines));
-        
+
         var delimiters = new List<string>();
 
         if (lines.Any() && lines.First().Length > 1 && lines.First()[..2] == "//")
@@ -91,13 +83,12 @@ public class StringCalculator
             delimiterLine = delimiterLine.Replace("[", "");
             delimiters.AddRange(delimiterLine.Split(']', StringSplitOptions.RemoveEmptyEntries).ToList());
 
-            lines.RemoveAt(0);
-        }
-        else
-        {
-            delimiters.Add(",");
-        }
+            lines.RemoveAt(0); // first line specifies delimiters, if present
 
+            return delimiters;
+        }
+        
+        delimiters.Add(",");
         return delimiters;
     }
 }
