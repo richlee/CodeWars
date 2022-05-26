@@ -16,6 +16,7 @@ public class StringCalculatorTests
     }
 
     [TestCase("", 0)]
+    [TestCase("", 0)]
     [TestCase("1", 1)]
     [TestCase("1,2", 3)]
     [TestCase("1,2,3", 6)]
