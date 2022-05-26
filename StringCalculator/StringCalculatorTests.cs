@@ -26,6 +26,7 @@ public class StringCalculatorTests
     [TestCase("//[***]\n1***2***3", 6)]
     [TestCase("//[*][%]\n1*2%3", 6)]
     [TestCase("//[**][%%]\n1**2%%3", 6)]
+    [TestCase("//[**][%%]\n1**2%%3\n4", 10)]
     public void When_Input_Returns_Result(string input, int result)
     {
         Assert.That(calc.Add(input), Is.EqualTo(result));
