@@ -41,7 +41,8 @@ public class StringCalculatorTests
             () => calc.Add(input)
         );
         
-        Assert.That(ex.Message, Is.EqualTo($"negative not allowed {input}"));
+        Assert.That(ex, Is.Not.Null);
+        Assert.That(ex!.Message, Is.EqualTo($"negative not allowed {input}"));
     }
 
     [Test]

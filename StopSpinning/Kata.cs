@@ -13,38 +13,11 @@ namespace StopSpinning;
 /// </summary>
 public static class Kata
 {
-    public static string SpinWords(string sentence)
-    {
-        return string
-            .Join(" ", 
-                sentence
-                    .Split(" ")
-                    .Select(word => word.Length >= 5 
-                        ? new string(word.Reverse().ToArray()) 
-                        : word));
-        
-        var words = sentence.Split(" ");
-
-        var results = new StringBuilder();
-
-        for (var idxWord = 0; idxWord < words.Length; idxWord++)
-        {
-            var word = words[idxWord];
-            if (word.Length < 5)
-            {
-                results.Append(word);
-            }
-            else
-            {
-                results.Append(word.Reverse());
-            }
-
-            if (idxWord + 1 < words.Length)
-            {
-                results.Append(' ');
-            }
-        }
-
-        return results.ToString();
-    }
+    public static string SpinWords(string sentence) =>
+        string.Join(" ",
+            sentence
+            .Split(" ")
+            .Select(word => word.Length >= 5
+                ? new string(word.Reverse().ToArray())
+                : word));
 }
