@@ -13,19 +13,5 @@ public class Kata
         }
 
         return dict;
-        
-        foreach (var ch in str)
-        {
-            if (dict.ContainsKey(ch))
-            {
-                dict[ch]++;
-            }
-            else
-            {
-                dict.Add(ch, 1);
-            }
-        }
-        
-        return dict;
     }
 }
